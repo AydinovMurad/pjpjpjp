@@ -1,0 +1,85 @@
+﻿@model List<Product>
+
+<main>
+    <div class="container">
+        <div class="category">
+            <ul>
+                <li><a href="">All</a></li>
+                <li><a href="">Chicken</a></li>
+                <li><a href="">Meat</a></li>
+                <li><a href="">Vegeterian</a></li>
+                <li><a href="">Hot</a></li>
+            </ul>
+        </div>
+        <div class="productlist">
+@foreach (var product in Model)
+            {
+                <div class="product">
+                    <a href="#"> <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt=""></a>
+                    <div class="product-info">
+                        <h4>@product.Name</h4>
+                        <button class="select-btn">Select</button>
+                    </div>
+                    <div class="product-ingr">
+                        <p>@product.Description</p>
+                    </div>
+                </div>
+            }
+@*             <div class="product">
+                <a href="#"> <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt=""></a>
+                <div class="product-info">
+                    <h4>Chicken Parmesan</h4>
+                    <button class="select-btn">Select</button>
+                </div>
+                <div class="product-ingr">
+                    <p>Pizza Sauce, Chicken Poppers, Mushrooms, Italian Flavoring, Garlic Parmesan Sauce, Mozzarella</p>
+                </div>
+            </div>
+            <div class="product">
+                <a href="#"> <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt=""></a>
+                <div class="product-info">
+                    <h4>Chicken Parmesan</h4>
+                    <button class="select-btn">Select</button>
+                </div>
+                <div class="product-ingr">
+                    <p>Pizza Sauce, Chicken Poppers, Mushrooms, Italian Flavoring, Garlic Parmesan Sauce, Mozzarella</p>
+                </div>
+            </div>
+            <div class="product">
+                <a href="#"> <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt=""></a>
+                <div class="product-info">
+                    <h4>Chicken Parmesan</h4>
+                    <button class="select-btn">Select</button>
+                </div>
+                <div class="product-ingr">
+                    <p>Pizza Sauce, Chicken Poppers, Mushrooms, Italian Flavoring, Garlic Parmesan Sauce, Mozzarella</p>
+                </div>
+            </div> *@
+            <div class="overlay hidden"></div>
+            <div class="modal_product">
+                <div class="product_image">
+                    <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt="">
+                </div>
+                <div class="product__info">
+                    <h1>Caesar Salad</h1>
+                    <div class="count-price">
+                        <div class="prodcount">
+                            <img id="minus" src="~/client/assets/icons/minus.svg" alt="">
+                            <span>28</span>
+                            <img id="plus" src="~/client/assets/icons/plus.svg" alt="">
+                        </div>
+                        <span>6M</span>
+                    </div>
+                    <div class="busketadd">
+                        <div class="busketlogo">
+                            <img id="basket" src="~/client/assets/icons/basket.svg" alt="basket">
+                            <span>0 M</span>
+                        </div>
+                        <button>Add</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Другие продукты тут -->
+        </div>
+    </div>
+</main>

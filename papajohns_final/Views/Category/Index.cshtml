@@ -1,0 +1,13 @@
+﻿@model IEnumerable<papajohns_final.Models.Category>
+
+<h2>Categories</h2>
+<ul>
+    @foreach (var category in Model)
+    {
+        <li>
+            <a href="@Url.Action("Details", "Category", new { id = category.Id })">
+                @category.Name
+            </a>
+        </li>
+    }
+</ul>
