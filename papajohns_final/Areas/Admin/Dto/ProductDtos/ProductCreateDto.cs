@@ -5,6 +5,8 @@ namespace papajohns_final.Areas.Admin.Dto.ProductDtos
 {
     public class ProductCreateDto
     {
+      
+
         public string Name { get; set; } = null!;
         public string Description { get; set; } = null!;
         public List<IFormFile>? Files { get; set; }

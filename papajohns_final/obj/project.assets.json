@@ -10692,11 +10692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\final-\\papajohns_final\\papajohns_final.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\pjpjpjp\\papajohns_final\\papajohns_final.csproj",
       "projectName": "papajohns_final",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\final-\\papajohns_final\\papajohns_final.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\pjpjpjp\\papajohns_final\\papajohns_final.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\final-\\papajohns_final\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\pjpjpjp\\papajohns_final\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
