@@ -26,7 +26,7 @@
         <div class="container">
             <nav>
                 <div class="nav-left">
-                    <a href="./filial.html" data-translate="restaurants">
+                    <a asp-controller="Restraurant" asp-action="Index">
                         <h3>Restaurants</h3>
                     </a>
                     <a href="bonus.html" data-translate="rewards">
@@ -224,10 +224,10 @@
                 </div>
                 <div class="menu_nav">
                     <ul>
-                        @*  <li>
-                            <a href="./offers.html" data-translate="offers">offers</a>
+                          <li>
+                            <a asp-controller="Offer" asp-action="Index" >offers</a>
                         </li>
-                        <li>
+                       @* <li>
                             <a href="./card.html" data-translate="papadias">papadias</a>
                         </li>
                         <li>

@@ -20,12 +20,12 @@ namespace papajohns_final.Controllers
         {
             if (categoryId == null)
             {
-                return View(await _context.Products.Include(p => p.category).ToListAsync());
+                return View(await _context.Products.Include(p => p.category).Include(x=>x.ProductImages).ToListAsync());
             }
 
             var products = _context.Products
                 .Where(p => p.CategoryId == categoryId)
-                .Include(p => p.category);
+                .Include(p => p.category).Include(x=>x.ProductImages);
 
             return View(await products.ToListAsync());
         }

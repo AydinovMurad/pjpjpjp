@@ -9,23 +9,25 @@ namespace papajohns_final.Areas.Admin.Controllers;
 [Area("Admin")]
 public class ProductController : Controller
 {
+    private readonly IWebHostEnvironment _webHostEnvironment;
     private readonly AppDbContext _context;
 
-    public ProductController(AppDbContext context)
+    public ProductController(AppDbContext context, IWebHostEnvironment webHostEnvironment)
     {
         _context = context;
+        _webHostEnvironment = webHostEnvironment;
     }
 
     public async Task<IActionResult> Index4(int? categoryId)
     {
         if (categoryId == null)
         {
-            return View(await _context.Products.Include(p => p.category).ToListAsync());
+            return View(await _context.Products.Include(p => p.category).Include(x=>x.ProductImages).ToListAsync());
         }
 
         var products = _context.Products
             .Where(p => p.CategoryId == categoryId)
-            .Include(p => p.category);
+            .Include(p => p.category).Include(x=>x.ProductImages);
 
         return View(await products.ToListAsync());
     }
@@ -33,23 +35,61 @@ public class ProductController : Controller
     // GET: Product/Create
     public IActionResult Create()
     {
-        ViewBag.Categories = _context.Categories.ToList();
+            ViewBag.Categories = _context.Categories.ToList();
         return View();
     }
 
     // POST: Product/Create
     [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Name,Price,Description,CategoryId,Image")] Product product)
+    public async Task<IActionResult> Create(ProductPostDto dto)
     {
-        if (ModelState.IsValid)
-        {
-            _context.Add(product);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
         ViewBag.Categories = _context.Categories.ToList();
-        return View(product);
+
+
+        if(!ModelState.IsValid)
+            return View(dto);
+
+
+        Product product = new()
+        {
+            Name = dto.Name,
+            Description = dto.Description,
+            CategoryId = dto.CategoryId,
+            Price = dto.Price,
+            SubCategory=dto.SubCategory,
+        };
+
+        string path = Path.Combine(_webHostEnvironment.ContentRootPath,"wwwroot", "client", "assets", "images");
+        foreach (var image in dto.ProductImages)
+        {
+            string filename = Guid.NewGuid() + image.FileName;
+            string path2=Path.Combine(path,filename);
+            using (FileStream stream = new(path2, FileMode.CreateNew))
+            {
+               
+                await image.CopyToAsync(stream);
+             }
+
+            ProductImage ProductImage = new()
+            {
+                Product = product,
+                Url = filename,
+
+            };
+
+            product.ProductImages.Add(ProductImage);
+            
+        }
+
+
+        await _context.Products.AddAsync(product);
+        await _context.SaveChangesAsync();
+
+
+        return RedirectToAction("Index4");
+
+
+
     }
 
     // GET: Product/Edit/5

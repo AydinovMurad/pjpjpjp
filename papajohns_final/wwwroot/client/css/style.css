@@ -353,18 +353,26 @@ nav {
 .menu_nav {
     width: 100%;
     padding: 35px 0 35px;
-    margin-left: 10%;
+    margin-left: 1%;
     /* display: flex;
     flex-wrap: wrap;
     justify-content:space-around ; */
 }
-
-.menu_nav ul {
+    .menu_nav nav {
+        width: 100%;
+        padding: 35px 0 35px;
+    }
+        .menu_nav nav ul {
+            width: 100%;
+            gap:10 px;
+        
+        }
+        .menu_nav ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 11%;
+   
 }
 
 .menu_nav ul li a {

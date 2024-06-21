@@ -1,12 +1,13 @@
-﻿@model papajohns_final.Models.Product
+﻿@using papajohns_final.Areas.Admin.Dto.ProductDtos;
+@model ProductPostDto
 @{
     ViewBag.Title = "Create Product";
 }
 
 <h2>Create Product</h2>
 
-<form asp-action="Create" enctype="multipart/form-data">
-    <div class="form-group">
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">    
         <label asp-for="Name" class="control-label"></label>
         <input asp-for="Name" class="form-control" />
         <span asp-validation-for="Name" class="text-danger"></span>
@@ -20,6 +21,11 @@
         <label asp-for="Description" class="control-label"></label>
         <textarea asp-for="Description" class="form-control"></textarea>
         <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SubCategory" class="control-label"></label>
+        <textarea asp-for="SubCategory" class="form-control"></textarea>
+        <span asp-validation-for="SubCategory" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="CategoryId" class="control-label"></label>

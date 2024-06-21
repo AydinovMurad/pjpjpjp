@@ -12,10 +12,10 @@
             </ul>
         </div>
         <div class="productlist">
-@foreach (var product in Model)
+            @foreach (var product in Model)
             {
                 <div class="product">
-                    <a href="#"> <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt=""></a>
+                    <a href="#"> <img src="~/client/assets/images/@product.ProductImages.FirstOrDefault()?.Url" alt=""></a>
                     <div class="product-info">
                         <h4>@product.Name</h4>
                         <button class="select-btn">Select</button>
@@ -25,35 +25,35 @@
                     </div>
                 </div>
             }
-@*             <div class="product">
-                <a href="#"> <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt=""></a>
-                <div class="product-info">
-                    <h4>Chicken Parmesan</h4>
-                    <button class="select-btn">Select</button>
-                </div>
-                <div class="product-ingr">
-                    <p>Pizza Sauce, Chicken Poppers, Mushrooms, Italian Flavoring, Garlic Parmesan Sauce, Mozzarella</p>
-                </div>
+            @*             <div class="product">
+            <a href="#"> <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt=""></a>
+            <div class="product-info">
+            <h4>Chicken Parmesan</h4>
+            <button class="select-btn">Select</button>
+            </div>
+            <div class="product-ingr">
+            <p>Pizza Sauce, Chicken Poppers, Mushrooms, Italian Flavoring, Garlic Parmesan Sauce, Mozzarella</p>
+            </div>
             </div>
             <div class="product">
-                <a href="#"> <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt=""></a>
-                <div class="product-info">
-                    <h4>Chicken Parmesan</h4>
-                    <button class="select-btn">Select</button>
-                </div>
-                <div class="product-ingr">
-                    <p>Pizza Sauce, Chicken Poppers, Mushrooms, Italian Flavoring, Garlic Parmesan Sauce, Mozzarella</p>
-                </div>
+            <a href="#"> <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt=""></a>
+            <div class="product-info">
+            <h4>Chicken Parmesan</h4>
+            <button class="select-btn">Select</button>
+            </div>
+            <div class="product-ingr">
+            <p>Pizza Sauce, Chicken Poppers, Mushrooms, Italian Flavoring, Garlic Parmesan Sauce, Mozzarella</p>
+            </div>
             </div>
             <div class="product">
-                <a href="#"> <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt=""></a>
-                <div class="product-info">
-                    <h4>Chicken Parmesan</h4>
-                    <button class="select-btn">Select</button>
-                </div>
-                <div class="product-ingr">
-                    <p>Pizza Sauce, Chicken Poppers, Mushrooms, Italian Flavoring, Garlic Parmesan Sauce, Mozzarella</p>
-                </div>
+            <a href="#"> <img src="~/client/assets/images/chicken_parmesan_item.jpg" alt=""></a>
+            <div class="product-info">
+            <h4>Chicken Parmesan</h4>
+            <button class="select-btn">Select</button>
+            </div>
+            <div class="product-ingr">
+            <p>Pizza Sauce, Chicken Poppers, Mushrooms, Italian Flavoring, Garlic Parmesan Sauce, Mozzarella</p>
+            </div>
             </div> *@
             <div class="overlay hidden"></div>
             <div class="modal_product">

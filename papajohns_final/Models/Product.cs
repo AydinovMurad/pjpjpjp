@@ -10,7 +10,7 @@ namespace papajohns_final.Models
         public List<IFormFile>? Files { get; set; }
 
         public decimal Price { get; set; }
-        public ICollection<ProductImage> ProductImages { get; set; } = null!;
+        public ICollection<ProductImage> ProductImages { get; set; } = new List<ProductImage>();
         public string SubCategory { get; set; }
 
         public int? CategoryId { get; set; }
